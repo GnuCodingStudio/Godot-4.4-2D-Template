@@ -1,0 +1,13 @@
+[gd_resource type="Theme" format=3 uid="uid://cwahu64hfgl1x"]
+
+[resource]
+default_font_size = 32
+BigTitle/base_type = &"Label"
+BigTitle/colors/font_shadow_color = Color(0, 0, 0, 1)
+BigTitle/constants/shadow_offset_x = 7
+BigTitle/constants/shadow_offset_y = 5
+BigTitle/constants/shadow_outline_size = 10
+BigTitle/font_sizes/font_size = 100
+Button/font_sizes/font_size = 64
+SubTitle/base_type = &"Label"
+SubTitle/font_sizes/font_size = 50
