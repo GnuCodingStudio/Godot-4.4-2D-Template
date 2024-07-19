@@ -15,6 +15,13 @@
 </div>
 
 
+## Quick start
+
+When forking this template you should:
+- [ ] Read the [Architecture document](ARCHITECTURE.md)
+- [ ] Update this README.md file & remove the "Quick start" section
+
+
 ## Feature
 
 - ✨ A list of main mecanisms of the game
