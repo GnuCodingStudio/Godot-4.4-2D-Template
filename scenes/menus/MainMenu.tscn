@@ -42,13 +42,13 @@ alignment = 1
 layout_mode = 2
 size_flags_horizontal = 4
 theme_type_variation = &"BigTitle"
-text = "Godot 4.2"
+text = "GAME_NAME"
 
 [node name="SubTitle" type="Label" parent="GlobalMargin/Center/VBox"]
 layout_mode = 2
 size_flags_horizontal = 4
 theme_type_variation = &"SubTitle"
-text = "2D Template"
+text = "GAME_TAGLINE"
 
 [node name="HSeparator" type="HSeparator" parent="GlobalMargin/Center/VBox"]
 layout_mode = 2
@@ -60,14 +60,14 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-text = " START "
+text = "MAIN_START_BUTTON"
 
 [node name="CreditsButton" type="Button" parent="GlobalMargin/Center/VBox"]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-text = " CREDITS "
+text = "MAIN_CREDITS_BUTTON"
 
 [connection signal="pressed" from="GlobalMargin/Center/VBox/StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="GlobalMargin/Center/VBox/CreditsButton" to="." method="_on_credits_button_pressed"]

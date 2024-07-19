@@ -30,6 +30,10 @@ window/stretch/mode="viewport"
 
 theme/custom="res://resources/theme/MenuTheme.tres"
 
+[internationalization]
+
+locale/translations=PackedStringArray("res://resources/localization/MenuTranslations.en.translation", "res://resources/localization/MenuTranslations.fr.translation")
+
 [rendering]
 
 renderer/rendering_method="gl_compatibility"
