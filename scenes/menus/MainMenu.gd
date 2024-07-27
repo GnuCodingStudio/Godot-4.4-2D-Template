@@ -1,5 +1,8 @@
 extends Control
 
+func _ready():
+	ProgressionService.init()
+
 
 func _on_start_button_pressed():
 	print("Start button clicked")

@@ -31,3 +31,19 @@ Themes which may be used multiple times in the game.
 ## Scenes folder
 
 Contains scenes like levels and menus.
+
+## Services folder
+
+### Save / ProgressionService
+
+Autoloaded script to use to store and load progression of the player.
+Make sure `ProgressionService.init()` is called while starting the game.
+
+Use:
+- `ProgressionService.data`: to get the current value of Progression
+- `ProgressionService.save(progression: Progression)`: to save the given progression
+
+To change the values to save you'll have to change:
+- `ProgressionService._serialize()` method which serializes the progression object
+- `ProgressionService._parse()` method which parses the saved value
+- `Progression` class which is the structured data
