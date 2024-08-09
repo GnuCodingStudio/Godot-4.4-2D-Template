@@ -70,8 +70,12 @@ func _on_moving_direction_changed():
 	if moving_direction == Vector2.ZERO or moving_direction == facing_direction:
 		return
 
-	# TODO Handle diagonals
-	facing_direction = moving_direction
+	if facing_direction.x == sign(moving_direction.x):
+		facing_direction = Vector2(0, sign(moving_direction.y))
+	elif facing_direction.y == sign(moving_direction.y):
+		facing_direction = Vector2(sign(moving_direction.x), 0)
+	else:
+		facing_direction = moving_direction
 
 
 func _on_facing_direction_changed():
