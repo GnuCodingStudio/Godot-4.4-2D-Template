@@ -2,7 +2,11 @@
 
 ## Actors folder
 
-...
+It contains actors like hero, ennemis or characters. They can be controlled
+by players but they can also be controlled by the game itself.
+
+- **Actor** is located at the root of `actors/` folder
+- sub-classes of it are arranged in sub-folders
 
 ## Assets folder
 
