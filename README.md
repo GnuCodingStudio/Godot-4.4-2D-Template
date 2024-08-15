@@ -39,7 +39,7 @@ When forking this template you should:
 
 ## Tech & Tools
 
-- Godot 4.2
+- Godot 4.3
 - Gimp
 - ...
 
