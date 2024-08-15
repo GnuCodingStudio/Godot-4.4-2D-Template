@@ -72,6 +72,10 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+focus_neighbor_top = NodePath("../QuitButton")
+focus_neighbor_bottom = NodePath("../CreditsButton")
+focus_next = NodePath("../CreditsButton")
+focus_previous = NodePath("../QuitButton")
 text = "MAIN_START_BUTTON"
 
 [node name="CreditsButton" type="Button" parent="GlobalMargin/Center/VBox"]
@@ -79,6 +83,10 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+focus_neighbor_top = NodePath("../StartButton")
+focus_neighbor_bottom = NodePath("../QuitButton")
+focus_next = NodePath("../QuitButton")
+focus_previous = NodePath("../StartButton")
 text = "MAIN_CREDITS_BUTTON"
 
 [node name="QuitButton" type="Button" parent="GlobalMargin/Center/VBox"]
@@ -86,6 +94,10 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+focus_neighbor_top = NodePath("../CreditsButton")
+focus_neighbor_bottom = NodePath("../StartButton")
+focus_next = NodePath("../StartButton")
+focus_previous = NodePath("../CreditsButton")
 text = "MAIN_QUIT_BUTTON"
 
 [node name="QuitDialog" parent="." instance=ExtResource("3_pus6v")]

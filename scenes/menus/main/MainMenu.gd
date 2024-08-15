@@ -1,10 +1,12 @@
 extends Control
 
 @onready var quit_dialog = %QuitDialog
+@onready var start_button: Button = %StartButton
 
 
 func _ready():
 	ProgressionService.init()
+	start_button.grab_focus()
 
 
 func _on_start_button_pressed():
@@ -24,4 +26,4 @@ func _on_quit_dialog_confirmed():
 
 
 func _ask_to_confirm_quit():
-	quit_dialog.show()
+	quit_dialog.pop_in()

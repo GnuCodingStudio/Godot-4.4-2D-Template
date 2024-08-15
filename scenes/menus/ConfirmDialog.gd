@@ -21,6 +21,11 @@ func _ready():
 	cancel_button.text = cancelButtonText
 
 
+func pop_in():
+	super.show()
+	confirm_button.grab_focus()
+
+
 func _on_confirm_button_pressed():
 	hide()
 	on_confirm.emit()
