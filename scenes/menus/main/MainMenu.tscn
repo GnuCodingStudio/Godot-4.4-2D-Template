@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://dpeyhi4f1jd78"]
+[gd_scene load_steps=6 format=3 uid="uid://dpeyhi4f1jd78"]
 
 [ext_resource type="Theme" uid="uid://cwahu64hfgl1x" path="res://resources/theme/MenuTheme.tres" id="1_tjl38"]
-[ext_resource type="Script" path="res://scenes/menus/MainMenu.gd" id="2_jmfhq"]
+[ext_resource type="Script" path="res://scenes/menus/main/MainMenu.gd" id="2_jmfhq"]
+[ext_resource type="Material" uid="uid://dygopb8fee5xt" path="res://scenes/menus/main/MainMenuBackground.tres" id="3_ko0o6"]
 [ext_resource type="PackedScene" uid="uid://bpk0axlikarbm" path="res://scenes/menus/ConfirmDialog.tscn" id="3_pus6v"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_t1ilb"]
@@ -18,6 +19,16 @@ size_flags_vertical = 3
 theme = ExtResource("1_tjl38")
 script = ExtResource("2_jmfhq")
 metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect" type="ColorRect" parent="."]
+material = ExtResource("3_ko0o6")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.583954, 0, 0.695312, 1)
 
 [node name="GlobalMargin" type="MarginContainer" parent="."]
 layout_mode = 1
