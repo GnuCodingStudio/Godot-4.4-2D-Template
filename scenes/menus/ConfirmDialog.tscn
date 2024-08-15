@@ -6,6 +6,16 @@
 bg_color = Color(0, 0, 0, 0.298039)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_345md"]
+bg_color = Color(0.0156863, 0, 0.0313726, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.564706, 0.00392157, 0.968627, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
 
 [node name="ConfirmDialog" type="Panel"]
 visible = false
@@ -46,7 +56,7 @@ layout_mode = 2
 
 [node name="Buttons" type="HBoxContainer" parent="Center/ConfirmPanel/MarginContainer/VBox"]
 layout_mode = 2
-size_flags_horizontal = 8
+size_flags_horizontal = 4
 theme_override_constants/separation = 40
 
 [node name="CancelButton" type="Button" parent="Center/ConfirmPanel/MarginContainer/VBox/Buttons"]
