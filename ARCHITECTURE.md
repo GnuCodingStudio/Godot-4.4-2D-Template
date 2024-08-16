@@ -36,6 +36,15 @@ Themes which may be used multiple times in the game.
 
 Contains scenes like levels and menus.
 
+### Console scene
+
+The `GameConsole` is a UI for developers which allows to enter commands for debugging.
+By default, on an AZERTY it opens when typing the "²" key.
+
+To add it to a scene, add the `GameConsole` to it, and add `Command` children nodes.
+Every `Command` nodes have to be configured to **target** an existing node of the scene,
+onto an existing **function** with the right **parameters**.
+
 ## Services folder
 
 ### Save / ProgressionService
