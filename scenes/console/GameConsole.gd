@@ -2,6 +2,8 @@ class_name GameConsole
 extends PanelContainer
 
 
+@export var auto_help: bool
+
 @onready var input: LineEdit = %Input
 @onready var log: RichTextLabel = %Log
 
@@ -19,7 +21,7 @@ func _ready() -> void:
 		if command.name == "help":
 			has_help = true
 
-	if not has_help:
+	if not has_help && auto_help:
 		_commands.push_front(_create_help())
 
 	log_info("Listed commands: %s" % _commands_as_string())
