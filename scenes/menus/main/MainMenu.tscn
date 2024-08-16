@@ -1,9 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://dpeyhi4f1jd78"]
+[gd_scene load_steps=8 format=3 uid="uid://dpeyhi4f1jd78"]
 
 [ext_resource type="Theme" uid="uid://cwahu64hfgl1x" path="res://resources/theme/MenuTheme.tres" id="1_tjl38"]
 [ext_resource type="Script" path="res://scenes/menus/main/MainMenu.gd" id="2_jmfhq"]
 [ext_resource type="Material" uid="uid://dygopb8fee5xt" path="res://scenes/menus/MenuBackground.tres" id="3_ko0o6"]
 [ext_resource type="PackedScene" uid="uid://bpk0axlikarbm" path="res://scenes/menus/ConfirmDialog.tscn" id="3_pus6v"]
+[ext_resource type="PackedScene" uid="uid://b1jimh7w0a3n7" path="res://scenes/console/GameConsole.tscn" id="5_ljn2o"]
+[ext_resource type="Script" path="res://scenes/console/command/Command.gd" id="7_2time"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_t1ilb"]
 
@@ -100,12 +102,33 @@ focus_next = NodePath("../StartButton")
 focus_previous = NodePath("../CreditsButton")
 text = "MAIN_QUIT_BUTTON"
 
+[node name="TemplateFromGCS" type="Label" parent="GlobalMargin"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+text = "A Gnu Coding Studio's template"
+
 [node name="QuitDialog" parent="." instance=ExtResource("3_pus6v")]
 unique_name_in_owner = true
 layout_mode = 1
 text = "QUIT_CONFIRM_TEXT"
 confirmButtonText = "QUIT_CONFIRM_BUTTON"
 cancelButtonText = "QUIT_CONFIRM_CANCEL"
+
+[node name="GameConsole" parent="." instance=ExtResource("5_ljn2o")]
+visible = false
+layout_mode = 1
+anchors_preset = 10
+anchor_bottom = 0.0
+offset_bottom = 300.0
+grow_vertical = 1
+
+[node name="easter-egg" type="Node" parent="GameConsole" node_paths=PackedStringArray("target")]
+script = ExtResource("7_2time")
+target = NodePath("../../GlobalMargin/TemplateFromGCS")
+function = "show"
+help = "Show info about the template used to create this game."
 
 [connection signal="pressed" from="GlobalMargin/Center/VBox/StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="GlobalMargin/Center/VBox/CreditsButton" to="." method="_on_credits_button_pressed"]
