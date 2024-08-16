@@ -141,7 +141,7 @@ script = ExtResource("7_2time")
 target = NodePath("../../GlobalMargin/TemplateFromGCS")
 function = "appear"
 help = "Show info about the template used to create this game."
-parameters = Array[String](["time:float"])
+parameters = Array[String](["time:float:0.8"])
 
 [connection signal="pressed" from="GlobalMargin/Center/VBox/StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="GlobalMargin/Center/VBox/CreditsButton" to="." method="_on_credits_button_pressed"]

@@ -110,37 +110,39 @@ func _extract_parameters(command: Command, command_text: String) -> Dictionary:
 	var parameters_strings = command_text.split(" ").slice(1)
 	var parameters = []
 	var expected_params_count = command.parameters.size()
+	var required_params_count = command.parameters.filter(func(p): return p.split(":")[2].is_empty()).size()
 
-	if parameters_strings.size() < expected_params_count:
+	if parameters_strings.size() < required_params_count:
 		return {
-			 "error": "Command is expecting more parameters (%d < %d)" % [parameters_strings.size(), expected_params_count]
+			 "error": "Command is expecting more parameters (%d < %d)" % [parameters_strings.size(), required_params_count]
 		}
 
 	for i in expected_params_count:
 		var expected_param = command.parameters[i].split(":")
 		var expected_name = expected_param[0]
 		var expected_type = expected_param[1].to_lower()
-		var given_value = parameters_strings[i]
-		var value
+		var default_value = expected_param[2]
+		var given_value = parameters_strings[i] if parameters_strings.size() > i and not parameters_strings[i].is_empty() else default_value
+		var casted_value
 		match(expected_type):
 			"string":
-				value = given_value
+				casted_value = given_value
 			"int":
 				if given_value.is_valid_int():
-					value = int(given_value)
+					casted_value = int(given_value)
 				else:
 					return {
 						 "error": "Parameter \"%s\" is \"%s\" and is not an integer" % [expected_name, given_value]
 					}
 			"float":
 				if given_value.is_valid_float():
-					value = float(given_value)
+					casted_value = float(given_value)
 				else:
 					return {
 						 "error": "Parameter \"%s\" is \"%s\" and is not a float" % [expected_name, given_value]
 					}
 
-		parameters.push_back(value)
+		parameters.push_back(casted_value)
 
 	return { "parameters": parameters}
 

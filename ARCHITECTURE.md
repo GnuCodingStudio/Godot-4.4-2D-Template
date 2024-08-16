@@ -45,6 +45,12 @@ To add it to a scene, add the `GameConsole` to it, and add `Command` children no
 Every `Command` nodes have to be configured to **target** an existing node of the scene,
 onto an existing **function** with the right **parameters**.
 
+To define a parameter there are 2 formats:
+- `name:type` if parameter is mandatory (eg: `time:float`);
+- `name:type:default` if parameter is optional, optionals must be last parameters (eg: `time:float:0.8`).
+
+Allowed types are: `string`, `int` or `float`.
+
 ## Services folder
 
 ### Save / ProgressionService
