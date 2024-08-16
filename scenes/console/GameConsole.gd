@@ -34,6 +34,9 @@ func _input(event: InputEvent) -> void:
 			show()
 			input.call_deferred("grab_focus")
 
+	if Input.is_action_just_pressed("exit"):
+		hide()
+
 ### SIGNALS ###
 
 

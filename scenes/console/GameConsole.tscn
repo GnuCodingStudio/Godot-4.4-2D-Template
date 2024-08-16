@@ -47,10 +47,16 @@ layout_mode = 2
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
+focus_neighbor_right = NodePath("../Button")
+focus_next = NodePath("../Button")
+focus_previous = NodePath("../Button")
 placeholder_text = "CONSOLE_INPUT_PLACEHOLDER"
 
 [node name="Button" type="Button" parent="GlobalMargin/VBoxContainer/HBoxContainer"]
 layout_mode = 2
+focus_neighbor_left = NodePath("../Input")
+focus_next = NodePath("../Input")
+focus_previous = NodePath("../Input")
 shortcut = SubResource("Shortcut_tfrcl")
 text = "CONSOLE_INPUT_SUBMIT"
 
