@@ -85,15 +85,64 @@ func _execute_command(command_text: String):
 	if command_text.is_empty():
 		return
 
-	var matches = _commands.filter(func(c): return c.name == command_text)
+	var command_name = _extract_command_name(command_text)
+	var matches = _commands.filter(func(c): return c.name == command_name)
 	if matches.is_empty():
 		log_error("Command not found!")
+		prints("Command not found", command_name)
 		return
 
 	var command: Command = matches[0]
+	var parse_result = _extract_parameters(command, command_text)
 
-	_log_command(command)
-	command.target.call(command.function)
+	if parse_result.has("parameters"):
+		_log_command(command)
+		command.target.callv(command.function, parse_result.parameters)
+	else:
+		log_error(parse_result.error)
+
+
+func _extract_command_name(command_text: String) -> String:
+	return command_text.split(" ", false, 1)[0]
+
+
+func _extract_parameters(command: Command, command_text: String) -> Dictionary:
+	var parameters_strings = command_text.split(" ").slice(1)
+	var parameters = []
+	var expected_params_count = command.parameters.size()
+
+	if parameters_strings.size() < expected_params_count:
+		return {
+			 "error": "Command is expecting more parameters (%d < %d)" % [parameters_strings.size(), expected_params_count]
+		}
+
+	for i in expected_params_count:
+		var expected_param = command.parameters[i].split(":")
+		var expected_name = expected_param[0]
+		var expected_type = expected_param[1].to_lower()
+		var given_value = parameters_strings[i]
+		var value
+		match(expected_type):
+			"string":
+				value = given_value
+			"int":
+				if given_value.is_valid_int():
+					value = int(given_value)
+				else:
+					return {
+						 "error": "Parameter \"%s\" is \"%s\" and is not an integer" % [expected_name, given_value]
+					}
+			"float":
+				if given_value.is_valid_float():
+					value = float(given_value)
+				else:
+					return {
+						 "error": "Parameter \"%s\" is \"%s\" and is not a float" % [expected_name, given_value]
+					}
+
+		parameters.push_back(value)
+
+	return { "parameters": parameters}
 
 
 func _log_help():

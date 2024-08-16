@@ -6,7 +6,13 @@ extends Node
 @export var target: Node
 @export var function: String
 @export_multiline  var help: String
+@export var parameters: Array[String]
 
+enum ParameterType {
+	STRING,
+	INT,
+	FLOAT
+}
 
 ### BUILT-IN ###
 
