@@ -1,7 +1,7 @@
 class_name GameConsole
 extends PanelContainer
 
-
+## Generate help command automatically.
 @export var auto_help: bool
 
 @onready var input: LineEdit = %Input
@@ -15,13 +15,13 @@ var _commands: Array[Command] = []
 
 func _ready() -> void:
 	var commands = get_children().filter(func (child): return child is Command)
-	var has_help = false
+	var needs_help = auto_help
 	for command in commands:
 		_commands.push_back(command)
 		if command.name == "help":
-			has_help = true
+			needs_help = false
 
-	if not has_help && auto_help:
+	if needs_help:
 		_commands.push_front(_create_help())
 
 	log_info("Listed commands: %s" % _commands_as_string())
@@ -150,6 +150,5 @@ func _extract_parameters(command: Command, command_text: String) -> Dictionary:
 
 func _log_help():
 	for command in _commands:
-		log.append_text("[b]%s[/b] - " % command.name)
-		log.append_text("%s\n" % command.help)
+		log.append_text("[b]%s[/b] - %s" % [command.name, command.help])
 	log.append_text("--------------------\n")
