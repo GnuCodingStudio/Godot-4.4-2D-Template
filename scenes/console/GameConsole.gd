@@ -150,5 +150,5 @@ func _extract_parameters(command: Command, command_text: String) -> Dictionary:
 
 func _log_help():
 	for command in _commands:
-		log.append_text("[b]%s[/b] - %s" % [command.name, command.help])
+		log.append_text("[b]%s[/b] - %s\n" % [command.name, command.help])
 	log.append_text("--------------------\n")
