@@ -20,6 +20,7 @@
 When forking this template you should:
 - [ ] Read the [Architecture document](ARCHITECTURE.md)
 - [ ] Update this README.md file & remove the "Quick start" section
+- [ ] Update config in `.github` folder and sub-folders
 
 
 ## Feature
