@@ -14,7 +14,7 @@ func _bind_node(node: Node) -> void:
 		_bind_button(node)
 	elif node is CheckBox:
 		_bind_checkbox(node)
-	
+
 	for child in node.get_children():
 		_bind_node(child)
 
@@ -27,7 +27,3 @@ func _bind_button(button: Button) -> void:
 func _bind_checkbox(checkbox: CheckBox) -> void:
 	checkbox.mouse_entered.connect(UiAudio.play_ui.bind(UI_HOVER))
 	checkbox.pressed.connect(UiAudio.play_ui.bind(UI_CLICK))
-
-
-#func _play_sound(stream: AudioStream) -> void:
-#	UiAudio.play_ui(stream)
