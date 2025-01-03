@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://b7p8jls1peqwp"]
 
+[ext_resource type="Script" path="res://scenes/menus/credits/CreditsMenu.gd" id="1_35ggl"]
 [ext_resource type="PackedScene" uid="uid://wdqk4jv113lg" path="res://components/uicontrols/UIContols.tscn" id="1_f0kuf"]
-[ext_resource type="Script" path="res://scenes/menus/credits/CreditsMenu.gd" id="1_fgc2c"]
 [ext_resource type="PackedScene" uid="uid://bb1d5ajohbgpi" path="res://scenes/menus/credits/CreditsItem.tscn" id="1_gd18q"]
 [ext_resource type="Material" uid="uid://dygopb8fee5xt" path="res://scenes/menus/MenuBackground.tres" id="1_lx2dq"]
 
@@ -15,7 +15,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_fgc2c")
+script = ExtResource("1_35ggl")
 
 [node name="UiContols" parent="." instance=ExtResource("1_f0kuf")]
 
