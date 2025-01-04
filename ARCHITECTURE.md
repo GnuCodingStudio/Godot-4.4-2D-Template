@@ -12,6 +12,22 @@ by players but they can also be controlled by the game itself.
 
 It contains assets like Audios, Fonts or Images which are actually used in the game.
 
+## Components folder
+
+It contains reusable components which can be added to any scene to give them abilities.
+
+### Components/Collector (and Collactable)
+
+To be used when players can collect items by pressing "action_collect" when they are close to it.
+
+### Components/Trigger (and Triggerrable)
+
+To be used when elements can trigger other elements.
+
+### Components/UI Controls
+
+To be added on scenes containing buttons to play sounds on hover or on click.
+
 ## Objects folder
 
 ...
@@ -36,7 +52,7 @@ Themes which may be used multiple times in the game.
 
 Contains scenes like levels and menus.
 
-### Console scene
+### Scenes/Console
 
 The `GameConsole` is a UI for developers which allows to enter commands for debugging.
 By default, on an AZERTY it opens when typing the "²" key.
@@ -51,9 +67,17 @@ To define a parameter there are 2 formats:
 
 Allowed types are: `string`, `int` or `float`.
 
+### Scenes/Levels
+
+Need explanation?
+
+### Scenes/Menus
+
+Need explanation?
+
 ## Services folder
 
-### Save / ProgressionService
+### Services/Save (and ProgressionService)
 
 Autoloaded script to use to store and load progression of the player.
 Make sure `ProgressionService.init()` is called while starting the game.
@@ -66,3 +90,9 @@ To change the values to save you'll have to change:
 - `ProgressionService._serialize()` method which serializes the progression object
 - `ProgressionService._parse()` method which parses the saved value
 - `Progression` class which is the structured data
+
+### Services/Transition (and SceneTransition)
+
+Use `SceneTransition.change_scene(...)` instead of good old `get_tree().change_scene_to_file(...)` to:
+- add a fading transition between scenes;
+- execute a code between fade out and fade int, for saving purpose for instance.
