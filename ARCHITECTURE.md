@@ -16,9 +16,18 @@ It contains assets like Audios, Fonts or Images which are actually used in the g
 
 It contains reusable components which can be added to any scene to give them abilities.
 
+### Components/Clickable
+
+Add the `Clickable` to an element to make it clickable, it will need a `Area2D` as child to define the clickable area.
+
 ### Components/Collector (and Collactable)
 
 To be used when players can collect items by pressing "action_collect" when they are close to it.
+
+### Components/Magnet (and Magnetable)
+
+Add the `Magnet` component to an element to attract elements which contain a `Magnetable` component.
+The `Magnetable` component can only be used on `RigidBody2D` and its sub-classes.
 
 ### Components/Trigger (and Triggerrable)
 
