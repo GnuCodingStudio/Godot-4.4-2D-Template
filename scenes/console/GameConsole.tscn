@@ -16,7 +16,7 @@ script = ExtResource("1_uld6j")
 [node name="Panel" type="PanelContainer" parent="."]
 anchors_preset = 10
 anchor_right = 1.0
-offset_bottom = 400.0
+offset_bottom = 300.0
 grow_horizontal = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
