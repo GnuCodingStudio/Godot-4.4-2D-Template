@@ -7,6 +7,8 @@ signal click
 
 var _mouse_hover := false
 
+var enabled := true
+
 
 #region built-in
 
@@ -34,11 +36,13 @@ func _input(event: InputEvent) -> void:
 #region signal
 
 func _mouse_entered() -> void:
+	if not enabled: return
 	_mouse_hover = true
 	get_parent().modulate = Color.GRAY
 
 
 func _mouse_exited() -> void:
+	if not enabled: return
 	_mouse_hover = false
 	get_parent().modulate = Color.WHITE
 
