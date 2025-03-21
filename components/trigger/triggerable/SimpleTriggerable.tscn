@@ -1,6 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://d2wb5dbwmb7k6"]
 
-[ext_resource type="Script" path="res://components/triggerable/SimpleTriggerable.gd" id="1_b85oj"]
+[sub_resource type="Resource" id="Resource_r0spr"]
+metadata/__load_path__ = "res://components/triggerable/SimpleTriggerable.gd"
 
 [node name="SimpleTriggerable" type="Node2D"]
-script = ExtResource("1_b85oj")
+script = SubResource("Resource_r0spr")

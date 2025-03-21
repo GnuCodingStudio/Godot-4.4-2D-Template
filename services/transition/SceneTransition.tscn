@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://dfyumqr8qae8d"]
 
-[ext_resource type="Script" path="res://services/transition/SceneTransition.gd" id="1_w0swa"]
+[ext_resource type="Script" uid="uid://do5ipde6vyhso" path="res://services/transition/SceneTransition.gd" id="1_w0swa"]
 
 [sub_resource type="Animation" id="Animation_mxjcq"]
 length = 0.001
@@ -51,9 +51,9 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_1jahv"]
 _data = {
-"RESET": SubResource("Animation_mxjcq"),
-"fade_in": SubResource("Animation_ctkg7"),
-"fade_out": SubResource("Animation_ihgsi")
+&"RESET": SubResource("Animation_mxjcq"),
+&"fade_in": SubResource("Animation_ctkg7"),
+&"fade_out": SubResource("Animation_ihgsi")
 }
 
 [node name="SceneTransition" type="Control"]

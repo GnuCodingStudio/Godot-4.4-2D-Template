@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://b1jimh7w0a3n7"]
 
 [ext_resource type="Theme" uid="uid://cdovj1dkmbjh0" path="res://scenes/console/GameConsole.tres" id="1_glwp4"]
-[ext_resource type="Script" path="res://scenes/console/GameConsole.gd" id="1_uld6j"]
+[ext_resource type="Script" uid="uid://cfqy30lvmjprl" path="res://scenes/console/GameConsole.gd" id="1_uld6j"]
 
 [sub_resource type="InputEventKey" id="InputEventKey_ox4yg"]
 device = -1

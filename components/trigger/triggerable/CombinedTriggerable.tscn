@@ -1,6 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://cuj170821rlq3"]
 
-[ext_resource type="Script" path="res://components/triggerable/CombinedTriggerable.gd" id="1_atnrd"]
+[sub_resource type="Resource" id="Resource_qlecp"]
+metadata/__load_path__ = "res://components/triggerable/CombinedTriggerable.gd"
 
 [node name="CombinedTriggerable" type="Node2D"]
-script = ExtResource("1_atnrd")
+script = SubResource("Resource_qlecp")

@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://bpk0axlikarbm"]
 
-[ext_resource type="Script" path="res://scenes/menus/ConfirmDialog.gd" id="1_orr5f"]
+[ext_resource type="Script" uid="uid://c6s5rp1ji7gb6" path="res://scenes/menus/ConfirmDialog.gd" id="1_orr5f"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v03a6"]
 bg_color = Color(0, 0, 0, 0.298039)

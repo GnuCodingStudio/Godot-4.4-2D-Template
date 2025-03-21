@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://du0c1yciw8ul6"]
 
-[ext_resource type="Script" path="res://objects/actors/Actor.gd" id="1_78mof"]
+[ext_resource type="Script" uid="uid://bd0ogea7stadj" path="res://objects/actors/Actor.gd" id="1_78mof"]
 
 [node name="Actor" type="RigidBody2D"]
 gravity_scale = 0.0
