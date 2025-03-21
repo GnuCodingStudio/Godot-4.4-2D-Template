@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://cxlkjx4h6gv5h"]
+
+[ext_resource type="Script" uid="uid://ccefkett2vvtd" path="res://components/actionnable/Actionner.gd" id="1_5vi4i"]
+
+[node name="Collector" type="Area2D"]
+script = ExtResource("1_5vi4i")
+
+[node name="AudioPlayer" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+volume_db = -15.0
