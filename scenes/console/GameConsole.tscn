@@ -61,5 +61,5 @@ focus_previous = NodePath("../Input")
 shortcut = SubResource("Shortcut_tfrcl")
 text = "CONSOLE_INPUT_SUBMIT"
 
-[connection signal="text_submitted" from="Panel/GlobalMargin/VBoxContainer/HBoxContainer/Input" to="Panel" method="_on_command_submitted"]
-[connection signal="pressed" from="Panel/GlobalMargin/VBoxContainer/HBoxContainer/Button" to="Panel" method="_on_submit_pressed"]
+[connection signal="text_submitted" from="Panel/GlobalMargin/VBoxContainer/HBoxContainer/Input" to="." method="_on_command_submitted"]
+[connection signal="pressed" from="Panel/GlobalMargin/VBoxContainer/HBoxContainer/Button" to="." method="_on_submit_pressed"]
