@@ -5,7 +5,7 @@ extends CanvasLayer
 @export var auto_help: bool
 
 @onready var input: LineEdit = %Input
-@onready var log: RichTextLabel = %Log
+@onready var log_field: RichTextLabel = %Log
 
 var _commands: Array[Command] = []
 
@@ -27,7 +27,7 @@ func _ready() -> void:
 	log_info("Listed commands: %s" % _commands_as_string())
 
 
-func _input(event: InputEvent) -> void:
+func _input(_event: InputEvent) -> void:
 	if Input.is_action_just_pressed("show_game_console"):
 		if visible:
 			if not input.has_focus():
@@ -58,15 +58,15 @@ func _on_submit_pressed() -> void:
 
 
 func log_info(info: String):
-	log.append_text("[i]%s[/i]\n" % info)
+	log_field.append_text("[i]%s[/i]\n" % info)
 
 
 func log_error(info: String):
-	log.append_text("[color=#FF0000]%s[/color]\n" % info)
+	log_field.append_text("[color=#FF0000]%s[/color]\n" % info)
 
 
 func _log_command(command: Command):
-	log.append_text("Executing [b]%s[/b]...\n" % command.name)
+	log_field.append_text("Executing [b]%s[/b]...\n" % command.name)
 
 
 func _commands_as_string() -> String:
@@ -150,5 +150,5 @@ func _extract_parameters(command: Command, command_text: String) -> Dictionary:
 
 func _log_help():
 	for command in _commands:
-		log.append_text("[b]%s[/b] - %s\n" % [command.name, command.help])
-	log.append_text("--------------------\n")
+		log_field.append_text("[b]%s[/b] - %s\n" % [command.name, command.help])
+	log_field.append_text("--------------------\n")

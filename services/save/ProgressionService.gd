@@ -28,9 +28,9 @@ func clear():
 func _load():
 	if FileAccess.file_exists(dir_path + filename):
 		var file = FileAccess.open(dir_path + filename, FileAccess.READ)
-		var data = _parse(file.get_as_text())
+		var loaded_data = _parse(file.get_as_text())
 		file.close()
-		return data
+		return loaded_data
 	else:
 		return Progression.new(0)
 

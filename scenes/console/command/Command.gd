@@ -23,8 +23,8 @@ func _ready() -> void:
 ### LOGIC ###
 
 
-func _assert_paramters(parameters: Array[String]) -> void:
-	for parameter in parameters:
+func _assert_paramters(params: Array[String]) -> void:
+	for parameter in params:
 		var param_split = parameter.split(":")
 		var param_name = param_split[0]
 		var param_type = param_split[1]
